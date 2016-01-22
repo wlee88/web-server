@@ -1,18 +1,8 @@
 var express = require('express');
 var app = express();
 var PORT = 3001;
+var middleware = require('./middleware.js');
 
-var middleware = {
-  requireAuthentication: (req,res,next) => {
-    console.log('private route hit!');
-    next();
-  },
-  logger: (req,res,next) => {
-
-    console.log(`${new Date().toString()} Request: ${req.method} ${req.originalUrl} `);
-    next();
-  }
-};
 
 // witht his method you can activate middleware to hit on every page req.
 app.use(middleware.logger);
