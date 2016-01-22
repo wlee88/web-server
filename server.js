@@ -19,7 +19,7 @@ app.use(middleware.logger);
 
 // with this method it is specific to route
 app.get('/about', middleware.requireAuthentication, (req, res) => {
-  res.end("<h1>About Us</h1>");
+  res.end("<h1>About Us!</h1>");
 });
 app.use(express.static(`${__dirname}/public`));
 //console.log(__dirname);
